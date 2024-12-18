@@ -149,17 +149,17 @@
         /* New Squares Style */
         .square-container {
             display: flex;
-            justify-content: space-around;
+            justify-content: center; /* Align items to the center */
             flex-wrap: wrap;
             margin-top: 20px;
         }
 
         .square {
-            width: 150px;
-            height: 150px;
+            width: 180px; /* Increased size of the square */
+            height: 180px; /* Increased size of the square */
             background-color: #444;
             border-radius: 15px;
-            margin: 10px;
+            margin: 5px; /* Reduced margin to bring squares closer */
             overflow: hidden;
             transition: transform 0.3s ease;
             cursor: pointer;
@@ -272,18 +272,17 @@
             snowball.classList.add('snowball');
             snowball.textContent = '⚪';
             snowball.style.left = Math.random() * 100 + 'vw';
-            snowball.style.animationDuration = Math.random() * 2 + 1 + 's';
+            snowball.style.animationDuration = Math.random() * 2 + 2 + 's';
+            snowball.style.fontSize = Math.random() * 10 + 15 + 'px';
+            snowball.style.opacity = Math.random() * 0.8 + 0.2;
 
             snowContainer.appendChild(snowball);
             setTimeout(() => snowball.remove(), 5000);
         }
 
-        // Generate 50 snowflakes
-        for (let i = 0; i < 50; i++) {
-            setInterval(createSnowflake, 150);
-        }
+        setInterval(createSnowflake, 100);
+        setInterval(createSnowball, 150);
 
-        setInterval(createSnowball, 100);
     </script>
 </body>
 </html>
