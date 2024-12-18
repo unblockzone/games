@@ -14,7 +14,7 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden;
+            overflow: auto; /* Enables scrolling */
         }
 
         body {
@@ -102,7 +102,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 0; /* Behind all content */
+            z-index: -1; /* Behind all content */
             pointer-events: none; /* Allow interaction with elements above */
         }
 
@@ -213,7 +213,6 @@
 
     <!-- Square Container with customizable images and clickable links -->
     <div class="square-container">
-        <!-- First row -->
         <div class="square">
             <a href="https://your-custom-url1.com">
                 <img src="https://via.placeholder.com/300" alt="Square 1">
@@ -236,26 +235,26 @@
         </div>
     </div>
 
+    <!-- Second Row of Icons (Same as the first) -->
     <div class="square-container">
-        <!-- Second row (same as first row) -->
         <div class="square">
-            <a href="https://your-custom-url1.com">
-                <img src="https://via.placeholder.com/300" alt="Square 1">
+            <a href="https://your-custom-url5.com">
+                <img src="https://via.placeholder.com/300" alt="Square 5">
             </a>
         </div>
         <div class="square">
-            <a href="https://your-custom-url2.com">
-                <img src="https://via.placeholder.com/300" alt="Square 2">
+            <a href="https://your-custom-url6.com">
+                <img src="https://via.placeholder.com/300" alt="Square 6">
             </a>
         </div>
         <div class="square">
-            <a href="https://your-custom-url3.com">
-                <img src="https://via.placeholder.com/300" alt="Square 3">
+            <a href="https://your-custom-url7.com">
+                <img src="https://via.placeholder.com/300" alt="Square 7">
             </a>
         </div>
         <div class="square">
-            <a href="https://your-custom-url4.com">
-                <img src="https://via.placeholder.com/300" alt="Square 4">
+            <a href="https://your-custom-url8.com">
+                <img src="https://via.placeholder.com/300" alt="Square 8">
             </a>
         </div>
     </div>
@@ -300,7 +299,6 @@
 
         setInterval(createSnowflake, 100);
         setInterval(createSnowball, 150);
-
     </script>
 </body>
 </html>
