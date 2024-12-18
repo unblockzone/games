@@ -155,11 +155,11 @@
         }
 
         .square {
-            width: 180px; /* Increased size of the square */
-            height: 180px; /* Increased size of the square */
+            width: 300px; /* Significantly increased size of the square */
+            height: 300px; /* Significantly increased size of the square */
             background-color: #444;
             border-radius: 15px;
-            margin: 5px; /* Reduced margin to bring squares closer */
+            margin: 10px; /* Reduced margin to bring squares closer */
             overflow: hidden;
             transition: transform 0.3s ease;
             cursor: pointer;
@@ -215,27 +215,27 @@
     <div class="square-container">
         <div class="square">
             <a href="https://your-custom-url1.com">
-                <img src="https://via.placeholder.com/150" alt="Square 1">
+                <img src="https://via.placeholder.com/300" alt="Square 1">
             </a>
         </div>
         <div class="square">
             <a href="https://your-custom-url2.com">
-                <img src="https://via.placeholder.com/150" alt="Square 2">
+                <img src="https://via.placeholder.com/300" alt="Square 2">
             </a>
         </div>
         <div class="square">
             <a href="https://your-custom-url3.com">
-                <img src="https://via.placeholder.com/150" alt="Square 3">
+                <img src="https://via.placeholder.com/300" alt="Square 3">
             </a>
         </div>
         <div class="square">
             <a href="https://your-custom-url4.com">
-                <img src="https://via.placeholder.com/150" alt="Square 4">
+                <img src="https://via.placeholder.com/300" alt="Square 4">
             </a>
         </div>
         <div class="square">
             <a href="https://your-custom-url5.com">
-                <img src="https://via.placeholder.com/150" alt="Square 5">
+                <img src="https://via.placeholder.com/300" alt="Square 5">
             </a>
         </div>
     </div>
@@ -272,9 +272,7 @@
             snowball.classList.add('snowball');
             snowball.textContent = '⚪';
             snowball.style.left = Math.random() * 100 + 'vw';
-            snowball.style.animationDuration = Math.random() * 2 + 2 + 's';
-            snowball.style.fontSize = Math.random() * 10 + 15 + 'px';
-            snowball.style.opacity = Math.random() * 0.8 + 0.2;
+            snowball.style.animationDuration = Math.random() * 2 + 1 + 's';
 
             snowContainer.appendChild(snowball);
             setTimeout(() => snowball.remove(), 5000);
