@@ -225,7 +225,7 @@
         </div>
         <div class="square">
             <a href="https://unblockzone.github.io/games-minecraft/">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRup2cCnL0HdO36HCAVr81QFkgDe6li7VNVog&s" alt="Square 3">
+                <img src="https://media.minecraft.net/sites/minecraft/files/2022/10/Minecraft_logo_full_2022.png" alt="Minecraft">
             </a>
         </div>
         <div class="square">
@@ -244,61 +244,24 @@
         </div>
         <div class="square">
             <a href="https://unblockzone.github.io/games-cluster-rush/">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0JoOrVakisWsLs1tODXcQW6E0TcoFqoSndQ&s" alt="Square 6">
-            </a>
-        </div>
-        <div class="square">
-            <a href="https://unblockzone.github.io/games-rise-higher/">
-                <img src="https://images.hellokids.com/_uploads/_tiny_galerie/20190624/vign-rise-higher-hk-eyc_424.jpg" alt="Square 7">
-            </a>
-        </div>
-        <div class="square">
-            <a href="https://unblockzone.github.io/games-block-blast/">
-                <img src="https://play-lh.googleusercontent.com/R0qgNDYYHbRhw6JFsdEbDMqONplEvJx0m0W9wzYVvY3eNF1c2rfBWYjQxW0sLEzFe1E" alt="Square 8">
+                <img src="https://i.pinimg.com/originals/cb/3f/7f/cb3f7ff4ff903d1951a98e6c1852491e.png" alt="Cluster Rush">
             </a>
         </div>
     </div>
 
+    <div class="clock" id="clock"></div>
+
     <script>
-        // Real-time clock
+        // Update clock every second
         function updateClock() {
             const now = new Date();
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            document.getElementById('clock').textContent = `${hours}:${minutes}`;
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
         }
+
         setInterval(updateClock, 1000);
-        updateClock();
-
-        // Snow effect generator
-        const snowContainer = document.getElementById('snowContainer');
-
-        function createSnowflake() {
-            const snowflake = document.createElement('div');
-            snowflake.classList.add('snowflake');
-            snowflake.textContent = '❄';
-            snowflake.style.left = Math.random() * 100 + 'vw';
-            snowflake.style.animationDuration = Math.random() * 2 + 2 + 's';
-            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
-            snowflake.style.opacity = Math.random() * 0.8 + 0.2;
-
-            snowContainer.appendChild(snowflake);
-            setTimeout(() => snowflake.remove(), 5000);
-        }
-
-        function createSnowball() {
-            const snowball = document.createElement('div');
-            snowball.classList.add('snowball');
-            snowball.textContent = '⚪';
-            snowball.style.left = Math.random() * 100 + 'vw';
-            snowball.style.animationDuration = Math.random() * 2 + 1 + 's';
-
-            snowContainer.appendChild(snowball);
-            setTimeout(() => snowball.remove(), 5000);
-        }
-
-        setInterval(createSnowflake, 100);
-        setInterval(createSnowball, 150);
     </script>
 </body>
 </html>
