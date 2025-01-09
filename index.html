@@ -4,18 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Games</title>
-
-    <!-- Favicon link -->
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/61/61457.png" type="image/x-icon">
-
     <style>
         /* Prevent horizontal scrolling and allow vertical scrolling */
         html, body {
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow-x: hidden; /* Disable horizontal scrolling */
-            overflow-y: auto;   /* Allow vertical scrolling */
+            overflow-x: hidden;
+            overflow-y: auto;
         }
 
         body {
@@ -60,15 +57,15 @@
 
         .nav-buttons {
             display: flex;
-            gap: 10px; /* Reduced gap between buttons */
+            gap: 10px;
         }
 
         .nav-button {
             background-color: black;
             color: white;
-            padding: 15px 25px; /* Increased padding for larger size */
+            padding: 15px 25px;
             border-radius: 20px;
-            font-size: 18px; /* Increased font size */
+            font-size: 18px;
             text-decoration: none;
             text-align: center;
             transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
@@ -76,9 +73,9 @@
 
         .nav-button:hover {
             transform: scale(1.1);
-            background-color: black; /* Keep the background black */
-            box-shadow: 0px 0px 15px 4px #008CFF; /* Blue highlight with glow effect */
-            color: #008CFF; /* Change text color to blue */
+            background-color: black;
+            box-shadow: 0px 0px 15px 4px #008CFF;
+            color: #008CFF;
         }
 
         @media (max-width: 768px) {
@@ -98,20 +95,19 @@
             }
         }
 
-        /* New Squares Style */
         .square-container {
             display: flex;
-            justify-content: center; /* Align items to the center */
+            justify-content: center;
             flex-wrap: wrap;
             margin-top: 20px;
         }
 
         .square {
-            width: 300px; /* Significantly increased size of the square */
-            height: 300px; /* Significantly increased size of the square */
+            width: 300px;
+            height: 300px;
             background-color: #444;
             border-radius: 15px;
-            margin: 10px; /* Reduced margin to bring squares closer */
+            margin: 10px;
             overflow: hidden;
             transition: transform 0.3s ease;
             cursor: pointer;
@@ -125,24 +121,12 @@
         }
 
         .square:hover {
-            transform: scale(1.1); /* Zoom effect on hover */
+            transform: scale(1.1);
         }
 
         .square:hover img {
-            transform: scale(1.2); /* Zoom effect on image hover */
+            transform: scale(1.2);
         }
-
-        /* Logo replacement for clock */
-        .logo {
-            width: 30px;
-            height: 30px;
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.2); /* Zoom effect on hover */
-        }
-
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Roboto:wght@700&display=swap" rel="stylesheet">
 </head>
@@ -157,54 +141,29 @@
             <a href="https://unblockzone.github.io/proxies" class="nav-button">PROXIES</a>
             <a href="https://unblockzone.github.io/exploits" class="nav-button">EXPLOITS</a>
             <a href="https://unblockzone.github.io/settings/" class="nav-button">SETTINGS</a>
-            <a href="https://your-custom-url.com" class="nav-button">CONTACT</a> <!-- Added CONTACT button -->
+            <a href="https://your-custom-url.com" class="nav-button">CONTACT</a>
         </div>
     </header>
 
-    <!-- Square Container with customizable images and clickable links -->
     <div class="square-container">
         <div class="square">
-            <a href="https://unblockzone.github.io/games-subway-surfers/">
-                <img src="https://play-lh.googleusercontent.com/B-P9GyXgwh-ygo8Q8jBeZqPBYaAhQiRxrCkm6Xs23cbzalLk7OMqPsrLTut-H3qymLE=w240-h480-rw" alt="Square 1">
+            <a href="https://example.com/game1">
+                <img src="https://via.placeholder.com/300x300?text=Game+9" alt="Square 9">
             </a>
         </div>
         <div class="square">
-            <a href="https://unblockzone.github.io/games-stickman-hook/">
-                <img src="https://images.dwncdn.net/images/t_app-icon-l/p/73a13543-d706-475c-bca5-8bdd46a1b02d/2523539307/2099_4-77972256-logo" alt="Square 2">
+            <a href="https://example.com/game2">
+                <img src="https://via.placeholder.com/300x300?text=Game+10" alt="Square 10">
             </a>
         </div>
         <div class="square">
-            <a href="https://unblockzone.github.io/games-minecraft/">
-                <img src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Onboarding_Card-A_For-Beginners_600x600.jpg" alt="Square 3">
+            <a href="https://example.com/game3">
+                <img src="https://via.placeholder.com/300x300?text=Game+11" alt="Square 11">
             </a>
         </div>
         <div class="square">
-            <a href="https://unblockzone.github.io/games-doodle-jump/">
-                <img src="https://play-lh.googleusercontent.com/aHnvdFTx0LVyfVHQLX51VcWBYkSVGvggr4FvIiP-iwBu4pKBiOQA1OnRi_nyFdCWqlU8" alt="Square 4">
-            </a>
-        </div>
-    </div>
-
-    <!-- Second Row of Icons (Same as the first) -->
-    <div class="square-container">
-        <div class="square">
-            <a href="https://unblockzone.github.io/games-geometry-dash/">
-                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4d/Logo_of_Geometry_Dash.svg/640px-Logo_of_Geometry_Dash.svg.png" alt="Square 5">
-            </a>
-        </div>
-        <div class="square">
-            <a href="https://unblockzone.github.io/games-cluster-rush/">
-                <img src="https://store-images.s-microsoft.com/image/apps.32391.63460736466173537.43accb13-0658-4cb9-a3a9-2dd4b18ae15e.430f7951-125b-49ac-867b-8d7f482656c4?q=90&w=480&h=270" alt="Square 6">
-            </a>
-        </div>
-        <div class="square">
-            <a href="https://unblockzone.github.io/games-rise-higher/">
-                <img src="https://images.hellokids.com/_uploads/_tiny_galerie/20190624/vign-rise-higher-hk-eyc_424.jpg" alt="Square 7">
-            </a>
-        </div>
-        <div class="square">
-            <a href="https://unblockzone.github.io/games-block-blast/">
-                <img src="https://play-lh.googleusercontent.com/R0qgNDYYHbRhw6JFsdEbDMqONplEvJx0m0W9wzYVvY3eNF1c2rfBWYjQxW0sLEzFe1E=w240-h480-rw" alt="Square 8">
+            <a href="https://example.com/game4">
+                <img src="https://via.placeholder.com/300x300?text=Game+12" alt="Square 12">
             </a>
         </div>
     </div>
