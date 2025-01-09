@@ -9,12 +9,13 @@
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/61/61457.png" type="image/x-icon">
 
     <style>
-        /* Prevent horizontal and vertical scrolling */
+        /* Prevent horizontal scrolling and allow vertical scrolling */
         html, body {
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: auto; /* Enables scrolling */
+            overflow-x: hidden; /* Disable horizontal scrolling */
+            overflow-y: auto;   /* Allow vertical scrolling */
         }
 
         body {
