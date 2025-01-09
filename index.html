@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,7 +59,7 @@
 
         .nav-buttons {
             display: flex;
-            gap: 20px; /* Increased gap between buttons */
+            gap: 10px; /* Reduced gap between buttons */
         }
 
         .nav-button {
@@ -206,8 +205,8 @@
             <a href="https://unblockzone.github.io/proxies" class="nav-button">PROXIES</a>
             <a href="https://unblockzone.github.io/exploits" class="nav-button">EXPLOITS</a>
             <a href="https://unblockzone.github.io/settings/" class="nav-button">SETTINGS</a>
+            <a href="https://your-custom-url.com" class="nav-button">CONTACT</a> <!-- Added CONTACT button -->
         </div>
-        <img src="https://cdn-icons-png.flaticon.com/512/61/61457.png" alt="Logo" class="logo">
     </header>
 
     <div class="snow-container" id="snowContainer"></div> <!-- Snow effect -->
@@ -255,51 +254,28 @@
         </div>
         <div class="square">
             <a href="https://unblockzone.github.io/games-block-blast/">
-                <img src="https://play-lh.googleusercontent.com/R0qgNDYYHbRhw6JFsdEbDMqONplEvJx0m0W9wzYVvY3eNF1c2rfBWYjQxW0sLEzFe1E" alt="Square 8">
+                <img src="https://play-lh.googleusercontent.com/R0qgNDYYHbRhw6JFsdEbDMqONplEvJx0m0W9wzYVvY3eNF1c2rfBWYjMKmVxXYk5KKk" alt="Square 8">
             </a>
         </div>
     </div>
 
+    <!-- Clock -->
+    <div class="clock">
+        <span id="clock">00:00</span>
+    </div>
+
     <script>
-        // Real-time clock
-        function updateClock() {
-            const now = new Date();
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            document.getElementById('clock').textContent = `${hours}:${minutes}`;
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
-
-        // Snow effect generator
+        // Snow effect JavaScript
         const snowContainer = document.getElementById('snowContainer');
-
-        function createSnowflake() {
+        for (let i = 0; i < 100; i++) {
             const snowflake = document.createElement('div');
             snowflake.classList.add('snowflake');
-            snowflake.textContent = '❄';
-            snowflake.style.left = Math.random() * 100 + 'vw';
-            snowflake.style.animationDuration = Math.random() * 2 + 2 + 's';
-            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
-            snowflake.style.opacity = Math.random() * 0.8 + 0.2;
-
+            snowflake.textContent = '*';
+            snowflake.style.left = `${Math.random() * 100}%`;
+            snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            snowflake.style.animationDelay = `${Math.random() * 5}s`;
             snowContainer.appendChild(snowflake);
-            setTimeout(() => snowflake.remove(), 5000);
         }
-
-        function createSnowball() {
-            const snowball = document.createElement('div');
-            snowball.classList.add('snowball');
-            snowball.textContent = '⚪';
-            snowball.style.left = Math.random() * 100 + 'vw';
-            snowball.style.animationDuration = Math.random() * 2 + 1 + 's';
-
-            snowContainer.appendChild(snowball);
-            setTimeout(() => snowball.remove(), 5000);
-        }
-
-        setInterval(createSnowflake, 100);
-        setInterval(createSnowball, 150);
     </script>
 </body>
 </html>
