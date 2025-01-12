@@ -1,20 +1,19 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UnblockZone</title>
-
-    <!-- Favicon link -->
+    <title>Games</title>
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/61/61457.png" type="image/x-icon">
-
     <style>
-        /* Prevent horizontal and vertical scrolling */
+        /* Prevent horizontal scrolling and allow vertical scrolling */
         html, body {
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: auto;
         }
 
         body {
@@ -23,28 +22,28 @@
             color: white;
             display: flex;
             flex-direction: column;
+            align-items: center;
             text-align: center;
-            position: relative;
         }
 
         header {
             background-color: #333;
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-            padding: 10px 20px;
+            justify-content: space-between;
+            padding: 10px 0;
+            width: 100%;
             position: sticky;
             top: 0;
             z-index: 10;
-            gap: 15px;
         }
 
         h1 {
             font-size: 50px;
             margin: 0;
+            margin-left: 20px;
             display: inline-block;
             transition: transform 0.3s ease;
-            cursor: pointer;
         }
 
         h1:hover {
@@ -62,7 +61,7 @@
         .nav-buttons {
             display: flex;
             gap: 10px;
-            margin-left: 20px;
+            margin-right: 20px;
         }
 
         .nav-button {
@@ -83,220 +82,167 @@
             color: #008CFF;
         }
 
-        .subtitle-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            width: 100%;
-            margin-top: 20px;
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 40px;
+            }
+
+            .nav-buttons {
+                display: block;
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            .nav-button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
         }
 
-        .subtitle {
-            font-size: 80px;
-            display: inline-block;
-            margin-bottom: 20px;
+        .square-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .square {
+            width: 300px;
+            height: 300px;
+            background-color: #444;
+            border-radius: 15px;
+            margin: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .square img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             transition: transform 0.3s ease;
         }
 
-        .subtitle .blue {
-            color: blue;
-            font-size: 100px;
-            display: block;
-        }
-
-        .subtitle:hover {
+        .square:hover {
             transform: scale(1.1);
         }
 
-        .custom-search-bar {
-            font-size: 18px;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 30px;
-            width: 50%;
-            background-color: #555;
-            color: white;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .custom-search-bar:focus {
-            outline: none;
-        }
-
-        .custom-search-bar:hover {
-            transform: scale(1.1);
-            box-shadow: 0px 0px 20px 4px #008CFF;
-        }
-
-        /* Background with floating blue dots */
-        .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: black;
-            overflow: hidden;
-            z-index: -1;
-        }
-
-        .dot {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: blue;
-            border-radius: 50%;
-            animation: float 10s infinite;
-            opacity: 0;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(100vh) scale(0.5);
-                opacity: 0;
-            }
-            20% {
-                opacity: 1;
-            }
-            80% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-10vh) scale(1);
-                opacity: 0;
-            }
-        }
-
-        /* Game Icon Styles */
-        .game-icons-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            gap: 20px;
-            justify-items: center;
-            padding: 20px;
-        }
-
-        .game-icon {
-            width: 100px;
-            height: 100px;
-            background-color: #333;
-            border-radius: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .game-icon:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 15px blue;
-        }
-
-        .game-icon img {
-            width: 80%;
-            height: 80%;
-            object-fit: cover;
-            border-radius: 8px;
+        .square:hover img {
+            transform: scale(1.2);
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Roboto:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1 onclick="window.location.href='https://unblockzone.github.io/'">
-            <span class="white">UNBLOCK</span><span class="blue">ZONE</span>
-        </h1>
+        <a href="https://unblockzone.github.io">
+            <h1><span class="white">UNBLOCK</span><span class="blue">ZONE</span></h1>
+        </a>
         <div class="nav-buttons">
-            <a href="https://unblockzone.github.io/apps/" class="nav-button">APPS</a>
-            <a href="https://unblockzone.github.io/games/" class="nav-button">GAMES</a>
-            <a href="https://unblockzone.github.io/proxies/" class="nav-button">PROXIES</a>
-            <a href="https://unblockzone.github.io/exploits/" class="nav-button">EXPLOITS</a>
+            <a href="https://unblockzone.github.io/apps" class="nav-button">APPS</a>
+            <a href="https://unblockzone.github.io/games" class="nav-button">GAMES</a>
+            <a href="https://unblockzone.github.io/proxies" class="nav-button">PROXIES</a>
+            <a href="https://unblockzone.github.io/exploits" class="nav-button">EXPLOITS</a>
             <a href="https://unblockzone.github.io/settings/" class="nav-button">SETTINGS</a>
-            <a href="https://unblockzone.github.io/contact/" class="nav-button">CONTACT</a>
+            <a href="https://your-custom-url.com" class="nav-button">CONTACT</a>
         </div>
     </header>
 
-    <div class="subtitle-container">
-        <div class="subtitle">
-            <span class="white">UNBLOCK</span>
-            <span class="blue">ZONE</span>
+    <!-- First Row of Icons -->
+    <div class="square-container">
+        <div class="square">
+            <a href="https://unblockzone.github.io/games-subway-surfers/">
+                <img src="https://play-lh.googleusercontent.com/B-P9GyXgwh-ygo8Q8jBeZqPBYaAhQiRxrCkm6Xs23cbzalLk7OMqPsrLTut-H3qymLE=w240-h480-rw" alt="Square 1">
+            </a>
         </div>
-        <input type="text" id="customSearchBar" class="custom-search-bar" placeholder="Search...">
+        <div class="square">
+            <a href="https://unblockzone.github.io/games-stickman-hook/">
+                <img src="https://images.dwncdn.net/images/t_app-icon-l/p/73a13543-d706-475c-bca5-8bdd46a1b02d/2523539307/2099_4-77972256-logo" alt="Square 2">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/games-minecraft/">
+                <img src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Onboarding_Card-A_For-Beginners_600x600.jpg" alt="Square 3">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/games-doodle-jump/">
+                <img src="https://play-lh.googleusercontent.com/aHnvdFTx0LVyfVHQLX51VcWBYkSVGvggr4FvIiP-iwBu4pKBiOQA1OnRi_nyFdCWqlU8" alt="Square 4">
+            </a>
+        </div>
     </div>
 
-    <!-- Game Icons -->
-    <div class="game-icons-container">
-        <!-- First Row -->
-        <div class="game-icon"><img src="game1.jpg" alt="Game 1"></div>
-        <div class="game-icon"><img src="game2.jpg" alt="Game 2"></div>
-        <div class="game-icon"><img src="game3.jpg" alt="Game 3"></div>
-        <div class="game-icon"><img src="game4.jpg" alt="Game 4"></div>
-
-        <!-- Second Row -->
-        <div class="game-icon"><img src="game5.jpg" alt="Game 5"></div>
-        <div class="game-icon"><img src="game6.jpg" alt="Game 6"></div>
-        <div class="game-icon"><img src="game7.jpg" alt="Game 7"></div>
-        <div class="game-icon"><img src="game8.jpg" alt="Game 8"></div>
-
-        <!-- Third Row -->
-        <div class="game-icon"><img src="game9.jpg" alt="Game 9"></div>
-        <div class="game-icon"><img src="game10.jpg" alt="Game 10"></div>
-        <div class="game-icon"><img src="game11.jpg" alt="Game 11"></div>
-        <div class="game-icon"><img src="game12.jpg" alt="Game 12"></div>
-
-        <!-- Fourth Row -->
-        <div class="game-icon"><img src="game13.jpg" alt="Game 13"></div>
-        <div class="game-icon"><img src="game14.jpg" alt="Game 14"></div>
-        <div class="game-icon"><img src="game15.jpg" alt="Game 15"></div>
-        <div class="game-icon"><img src="game16.jpg" alt="Game 16"></div>
-
-        <!-- Fifth Row -->
-        <div class="game-icon"><img src="game17.jpg" alt="Game 17"></div>
-        <div class="game-icon"><img src="game18.jpg" alt="Game 18"></div>
-        <div class="game-icon"><img src="game19.jpg" alt="Game 19"></div>
-        <div class="game-icon"><img src="game20.jpg" alt="Game 20"></div>
+    <!-- Second Row of Icons -->
+    <div class="square-container">
+        <div class="square">
+            <a href="https://unblockzone.github.io/games-geometry-dash/">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4d/Logo_of_Geometry_Dash.svg/640px-Logo_of_Geometry_Dash.svg.png" alt="Square 5">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/games-cluster-rush/">
+                <img src="https://store-images.s-microsoft.com/image/apps.32391.63460736466173537.43accb13-0658-4cb9-a3a9-2dd4b18ae15e.430f7951-125b-49ac-867b-8d7f482656c4?q=90&w=480&h=270" alt="Square 6">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/games-rise-higher/">
+                <img src="https://images.hellokids.com/_uploads/_tiny_galerie/20190624/vign-rise-higher-hk-eyc_424.jpg" alt="Square 7">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/games-block-blast/">
+                <img src="https://play-lh.googleusercontent.com/R0qgNDYYHbRhw6JFsdEbDMqONplEvJx0m0W9wzYVvY3eNF1c2rfBWYjQxW0sLEzFe1E=w240-h480-rw" alt="Square 8">
+            </a>
+        </div>
     </div>
 
-    <!-- Background with floating blue dots -->
-    <div class="background" id="background"></div>
+    <!-- Third Row of Icons -->
+    <div class="square-container">
+        <div class="square">
+            <a href="https://unblockzone.github.io/stumble-guys/">
+                <img src="https://play-lh.googleusercontent.com/mEtqzM_OimEIeq4OjaKVZQcO9hQ1kc9YJWB3FeZ1Hf823Us2-1nyjgNVo2ufhnyH_lw=w526-h296-rw" alt="Square 9">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/bitlife/">
+                <img src="https://play-lh.googleusercontent.com/fUM-UyywXxjC8soxAZdIlxJrlRRXmql8wkE426SHzft4lJycSKVd2jCYQQX1BEG9Xw=w600-h300-pc0xffffff-pd" alt="Square 10">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/retro-bowl/">
+                <img src="https://play-lh.googleusercontent.com/WRM5Y1xZmzcCP1YtO5zl6G2g7CU5c5ZfjX4UVrgi1bpNgkfy-wuB-bQx3kkeRfaGYQ" alt="Square 11">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/basketball-stars/">
+                <img src="https://lh5.googleusercontent.com/proxy/-v1viuDzRPfQVp-CLjnkFX-ppLzoyL8F4kgsnlHvPt8jGRtvV9S-3DqVdmBBQCVPswthPnzv0_4cV_edISVNgzEC93iian6WleqrSW3Ujae12E4nnb3khQ" alt="Square 12">
+            </a>
+        </div>
+    </div>
 
-    <script>
-        const searchBar = document.getElementById('customSearchBar');
-        searchBar.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter') {
-                const baseUrl = 'https://didhe.party.jlengineering.se/&?q=Google';
-                const query = encodeURIComponent(searchBar.value.trim());
-                window.location.href = `${baseUrl} ${query}`;
-            }
-        });
-
-        // Generate floating blue dots
-        const background = document.getElementById('background');
-
-        function createDot() {
-            const dot = document.createElement('div');
-            dot.classList.add('dot');
-            dot.style.left = Math.random() * 100 + '%';
-            dot.style.animationDuration = Math.random() * 8 + 3 + 's';
-            dot.style.animationDelay = Math.random() * 2 + 's';
-            background.appendChild(dot);
-
-            dot.addEventListener('animationend', () => {
-                dot.remove();
-            });
-        }
-
-        for (let i = 0; i < 100; i++) {
-            createDot();
-        }
-
-        setInterval(() => {
-            createDot();
-        }, 500);
-    </script>
+    <!-- Fourth Row of Icons -->
+    <div class="square-container">
+        <div class="square">
+            <a href="https://unblockzone.github.io/hole-io/">
+                <img src="https://play-lh.googleusercontent.com/ZEyGTG4DJ_6DBYgOrZnGAVqAF8O-0w5MRZpOyz4QvXJ8ZyqcgOzsJNdXrtL28TpoU_Y=w240-h480-rw" alt="Square 13">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/shell-shockers/">
+                <img src="https://cdn-1.webcatalog.io/catalog/poki-shell-shockers/poki-shell-shockers-icon-filled-256.png?v=1714780065716" alt="Square 14">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/Idle-Breakout/">
+                <img src="https://play-lh.googleusercontent.com/e5jzYTn7Mjh9Ghn-DFpVedkOlRfSOyCS2AFgXdTrADIuuUbjx6vP6r_YOM2j5m7uLQ" alt="Square 15">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/smash-karts/">
+                <img src="https://play-lh.googleusercontent.com/cM1CXOuBIy0kjGfoCTOKNa812iuVX6X2DDop8xNH4mNyjuM-oj3wVqZ7wiAOizq_TA" alt="Square 16">
+            </a>
+        </div>
+    </div>
 </body>
 </html>
