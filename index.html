@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,15 +8,17 @@
     <title>Games</title>
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/61/61457.png" type="image/x-icon">
     <style>
-        /* Reset styles */
+        /* Prevent horizontal scrolling and allow vertical scrolling */
         html, body {
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: auto;
         }
 
         body {
+            background-color: black;
             font-family: 'Bowlby One', sans-serif;
             color: white;
             display: flex;
@@ -23,17 +27,8 @@
             text-align: center;
         }
 
-        canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1; /* Place the canvas in the background */
-        }
-
         header {
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: #333;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -88,6 +83,23 @@
             color: #008CFF;
         }
 
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 40px;
+            }
+
+            .nav-buttons {
+                display: block;
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            .nav-button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+
         .square-container {
             display: flex;
             justify-content: center;
@@ -120,88 +132,7 @@
         .square:hover img {
             transform: scale(1.2);
         }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 40px;
-            }
-
-            .nav-buttons {
-                display: block;
-                text-align: center;
-                margin-top: 10px;
-            }
-
-            .nav-button {
-                width: 100%;
-                margin-bottom: 10px;
-            }
-        }
     </style>
-    <script>
-        // JavaScript for background animation
-        window.onload = function() {
-            const canvas = document.createElement('canvas');
-            const ctx = canvas.getContext('2d');
-            document.body.appendChild(canvas);
-
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-
-            const particles = [];
-            const particleCount = 150;
-
-            class Particle {
-                constructor() {
-                    this.x = Math.random() * canvas.width;
-                    this.y = canvas.height + Math.random() * 100;
-                    this.size = Math.random() * 4 + 1;
-                    this.speedY = Math.random() * 3 + 1;
-                }
-
-                update() {
-                    this.y -= this.speedY;
-                    if (this.y < 0 - this.size) {
-                        this.y = canvas.height + Math.random() * 100;
-                        this.x = Math.random() * canvas.width;
-                    }
-                }
-
-                draw() {
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(0, 128, 255, 0.8)`;
-                    ctx.shadowBlur = 20;
-                    ctx.shadowColor = 'blue';
-                    ctx.fill();
-                }
-            }
-
-            function init() {
-                for (let i = 0; i < particleCount; i++) {
-                    particles.push(new Particle());
-                }
-            }
-
-            function animate() {
-                ctx.fillStyle = 'rgba(0, 0, 51, 0.8)';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-                particles.forEach(particle => {
-                    particle.update();
-                    particle.draw();
-                });
-                requestAnimationFrame(animate);
-            }
-
-            init();
-            animate();
-
-            window.addEventListener('resize', () => {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            });
-        };
-    </script>
     <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Roboto:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -221,8 +152,98 @@
 
     <!-- First Row of Icons -->
     <div class="square-container">
-        <!-- Add the same rows of icons from your original code here -->
-        <!-- First, Second, Third, and Fourth rows of game icons are restored -->
+        <div class="square">
+            <a href="https://unblockzone.github.io/games-subway-surfers/">
+                <img src="https://play-lh.googleusercontent.com/B-P9GyXgwh-ygo8Q8jBeZqPBYaAhQiRxrCkm6Xs23cbzalLk7OMqPsrLTut-H3qymLE=w240-h480-rw" alt="Square 1">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/games-stickman-hook/">
+                <img src="https://images.dwncdn.net/images/t_app-icon-l/p/73a13543-d706-475c-bca5-8bdd46a1b02d/2523539307/2099_4-77972256-logo" alt="Square 2">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/games-minecraft/">
+                <img src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Onboarding_Card-A_For-Beginners_600x600.jpg" alt="Square 3">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/games-doodle-jump/">
+                <img src="https://play-lh.googleusercontent.com/aHnvdFTx0LVyfVHQLX51VcWBYkSVGvggr4FvIiP-iwBu4pKBiOQA1OnRi_nyFdCWqlU8" alt="Square 4">
+            </a>
+        </div>
+    </div>
+
+    <!-- Second Row of Icons -->
+    <div class="square-container">
+        <div class="square">
+            <a href="https://unblockzone.github.io/games-geometry-dash/">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4d/Logo_of_Geometry_Dash.svg/640px-Logo_of_Geometry_Dash.svg.png" alt="Square 5">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/games-cluster-rush/">
+                <img src="https://store-images.s-microsoft.com/image/apps.32391.63460736466173537.43accb13-0658-4cb9-a3a9-2dd4b18ae15e.430f7951-125b-49ac-867b-8d7f482656c4?q=90&w=480&h=270" alt="Square 6">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/games-rise-higher/">
+                <img src="https://images.hellokids.com/_uploads/_tiny_galerie/20190624/vign-rise-higher-hk-eyc_424.jpg" alt="Square 7">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/games-block-blast/">
+                <img src="https://play-lh.googleusercontent.com/R0qgNDYYHbRhw6JFsdEbDMqONplEvJx0m0W9wzYVvY3eNF1c2rfBWYjQxW0sLEzFe1E=w240-h480-rw" alt="Square 8">
+            </a>
+        </div>
+    </div>
+
+    <!-- Third Row of Icons -->
+    <div class="square-container">
+        <div class="square">
+            <a href="https://unblockzone.github.io/stumble-guys/">
+                <img src="https://play-lh.googleusercontent.com/mEtqzM_OimEIeq4OjaKVZQcO9hQ1kc9YJWB3FeZ1Hf823Us2-1nyjgNVo2ufhnyH_lw=w526-h296-rw" alt="Square 9">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/bitlife/">
+                <img src="https://play-lh.googleusercontent.com/fUM-UyywXxjC8soxAZdIlxJrlRRXmql8wkE426SHzft4lJycSKVd2jCYQQX1BEG9Xw=w600-h300-pc0xffffff-pd" alt="Square 10">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/retro-bowl/">
+                <img src="https://play-lh.googleusercontent.com/WRM5Y1xZmzcCP1YtO5zl6G2g7CU5c5ZfjX4UVrgi1bpNgkfy-wuB-bQx3kkeRfaGYQ" alt="Square 11">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/basketball-stars/">
+                <img src="https://lh5.googleusercontent.com/proxy/-v1viuDzRPfQVp-CLjnkFX-ppLzoyL8F4kgsnlHvPt8jGRtvV9S-3DqVdmBBQCVPswthPnzv0_4cV_edISVNgzEC93iian6WleqrSW3Ujae12E4nnb3khQ" alt="Square 12">
+            </a>
+        </div>
+    </div>
+
+    <!-- Fourth Row of Icons -->
+    <div class="square-container">
+        <div class="square">
+            <a href="https://unblockzone.github.io/hole-io/">
+                <img src="https://play-lh.googleusercontent.com/ZEyGTG4DJ_6DBYgOrZnGAVqAF8O-0w5MRZpOyz4QvXJ8ZyqcgOzsJNdXrtL28TpoU_Y=w240-h480-rw" alt="Square 13">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/shell-shockers/">
+                <img src="https://cdn-1.webcatalog.io/catalog/poki-shell-shockers/poki-shell-shockers-icon-filled-256.png?v=1714780065716" alt="Square 14">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/Idle-Breakout/">
+                <img src="https://play-lh.googleusercontent.com/e5jzYTn7Mjh9Ghn-DFpVedkOlRfSOyCS2AFgXdTrADIuuUbjx6vP6r_YOM2j5m7uLQ" alt="Square 15">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/smash-karts/">
+                <img src="https://play-lh.googleusercontent.com/cM1CXOuBIy0kjGfoCTOKNa812iuVX6X2DDop8xNH4mNyjuM-oj3wVqZ7wiAOizq_TA" alt="Square 16">
+            </a>
+        </div>
     </div>
 </body>
 </html>
