@@ -6,7 +6,7 @@
     <title>Games</title>
     <link rel="icon" href="https://img.icons8.com/fluent-systems-filled/512/FFFFFF/picture.png" type="image/x-icon">
     <style>
-        /* Prevent horizontal scrolling and allow vertical scrolling */
+       
         html, body {
             margin: 0;
             padding: 0;
@@ -64,7 +64,7 @@
         }
 
         .blue {
-            color: lightblue; /* Change "zone" to red */
+            color: lightblue; =
         }
 
         .white {
@@ -91,8 +91,8 @@
         .nav-button:hover {
             transform: scale(1.1);
             background-color: black;
-            box-shadow: 0px 0px 15px 4px lightblue; /* Red glow */
-            color: lightblue; /* Red text on hover */
+            box-shadow: 0px 0px 15px 4px lightblue; 
+            color: lightblue; 
         }
 
         @media (max-width: 768px) {
@@ -144,12 +144,87 @@
         .square:hover img {
             transform: scale(1.2);
         }
-    </style>
+    #widgetbot-container {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 300px;
+    height: 200px;
+    resize: both;
+    overflow: hidden;
+    border: 2px solid #e63946;
+    background: #000;
+}
+
+widgetbot {
+    width: 100%;
+    height: 100%;
+}
+
+#widgetbot-container .drag-handle {
+    width: 100%;
+    height: 20px;
+    background: #e63946;
+    cursor: grab;
+}
+
+
+	</style>
     <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Roboto:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <a href="https://unblockzone.github.io">
+   
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const container = document.getElementById("widgetbot-container");
+    const handle = container.querySelector(".drag-handle");
+
+    let isDragging = false, startX, startY, startLeft, startTop;
+
+    handle.addEventListener("mousedown", function(e) {
+        isDragging = true;
+        startX = e.clientX;
+        startY = e.clientY;
+        startLeft = container.offsetLeft;
+        startTop = container.offsetTop;
+        document.addEventListener("mousemove", onMouseMove);
+        document.addEventListener("mouseup", onMouseUp);
+    });
+
+    function onMouseMove(e) {
+        if (!isDragging) return;
+        const deltaX = e.clientX - startX;
+        const deltaY = e.clientY - startY;
+        container.style.left = startLeft + deltaX + "px";
+        container.style.top = startTop + deltaY + "px";
+    }
+
+    function onMouseUp() {
+        isDragging = false;
+        document.removeEventListener("mousemove", onMouseMove);
+        document.removeEventListener("mouseup", onMouseUp);
+    }
+});
+</script>
+
+   <header>
+       <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="/imagtorigin">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8PERVFVWRG"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8PERVFVWRG');</script>
+
+<div id="widgetbot-container">
+    <div class="drag-handle"></div>
+    <widgetbot server="1332392560097890314" channel="1334588205416185907"></widgetbot>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+
+ <a href="https://unblockzone.github.io">
             <h1><span class="white">UNBLOCK</span><span class="blue">ZONE</span></h1>
         </a>
         <div class="nav-buttons">
